@@ -369,7 +369,7 @@ class _MaterialControlsState extends State<MaterialControls>
     final bool isFinished = (_latestValue.position >= _latestValue.duration) &&
         _latestValue.duration.inSeconds > 0;
     final bool showPlayButton =
-        widget.showPlayButton && !_dragging && !notifier.hideStuff;
+        widget.showPlayButton && !_latestValue.isPlaying && !_dragging;
 
     return GestureDetector(
       onTap: () {
